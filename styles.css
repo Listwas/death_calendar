@@ -1,0 +1,76 @@
+body {
+    background-color: #666;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: auto;
+    border: 1px solid red;
+
+
+}
+
+.items {
+    display: grid;
+    grid-template-columns: repeat(53, 1fr);
+    grid-template-rows: repeat(10, 1fr) ;
+    width: auto;
+    height: auto;
+    gap: 5px;
+}
+
+.label {
+    display: block;
+    position: relative;
+}
+
+.label input {
+    position: absolute;
+    opacity: 0;
+    margin: 0;
+    cursor: pointer;
+}
+
+.label input:checked ~ .span {
+    background-color: #2196F3;
+}
+
+.label:hover input ~ .span {
+    background-color: #ccc;
+}
+.span {
+    position: absolute;
+    background-color: blue;
+}
+
+
+.middle_box {
+    background-color: #666;
+}
+
+@media screen and (min-width: 800px) {
+    .label, .label input, .span {
+        width: 1vw;
+        height: 1vw;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .label, .label input, .span {
+        width: 0.8vw;
+        height: 0.8vh;
+    }   
+
+}
+
+@media screen and (max-width: 500px) {
+   
+        .label, .label input, .span {
+            width: 0.7vw;
+            height: 0.7vh;
+        }
+        
+}
