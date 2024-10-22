@@ -1,4 +1,5 @@
 body {
+    margin: 0;
     background-color: #666;
 }
 
@@ -6,21 +7,23 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+
     width: auto;
     height: auto;
-    border: 1px solid red;
-
 
 }
 
-.items {
+.items1 , .items2{
     display: grid;
-    grid-template-columns: repeat(53, 1fr);
+    grid-template-columns: repeat(26, 1fr);
     grid-template-rows: repeat(10, 1fr) ;
+    margin: 10px;
+    gap: 5px;
     width: auto;
     height: auto;
-    gap: 5px;
 }
+
+
 
 .label {
     display: block;
@@ -60,17 +63,38 @@ body {
 
 @media screen and (max-width: 800px) {
     .label, .label input, .span {
-        width: 0.8vw;
-        height: 0.8vh;
+        width: 1.2vw;
+        height: 1.2vh;
     }   
+
+    .items1, .items2 {
+        width: 800px;
+        margin-left: 4px;
+        margin-right: 4px;
+        gap: 2px;
+    }
 
 }
 
-@media screen and (max-width: 500px) {
-   
-        .label, .label input, .span {
-            width: 0.7vw;
-            height: 0.7vh;
-        }
+@media screen and (max-width: 605px) {
+    .main {
+        display: flex;
+        justify-content: center;
+        flex-flow: column wrap;
         
+        height: auto;
+    }
+    .items1, .items2 {
+        grid-template-columns: repeat(26, 0.5fr);
+        width: 500px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        margin-left: 2px;
+        gap:1px;
+    }
+
+    .label, .label input, .span {
+        width: 15px;
+        height: 15px;
+    }   
 }
