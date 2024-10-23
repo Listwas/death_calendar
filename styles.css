@@ -7,13 +7,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-flow: row nowrap;
 
     width: auto;
     height: auto;
 
 }
 
-.items1 , .items2{
+.items0 , .items1{
     display: grid;
     grid-template-columns: repeat(26, 1fr);
     grid-template-rows: repeat(10, 1fr) ;
@@ -22,8 +23,6 @@ body {
     width: auto;
     height: auto;
 }
-
-
 
 .label {
     display: block;
@@ -44,30 +43,35 @@ body {
 .label:hover input ~ .span {
     background-color: #ccc;
 }
+
 .span {
     position: absolute;
     background-color: blue;
 }
 
-
 .middle_box {
     background-color: #666;
 }
 
-@media screen and (min-width: 800px) {
+hr {
+    width: 99%;
+    border: 1px solid white
+}
+
+@media screen and (min-width: 900px) {
     .label, .label input, .span {
         width: 1vw;
         height: 1vw;
     }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 900px) {
     .label, .label input, .span {
         width: 1.2vw;
         height: 1.2vh;
     }   
 
-    .items1, .items2 {
+    .items0, .items1 {
         width: 800px;
         margin-left: 4px;
         margin-right: 4px;
@@ -84,7 +88,7 @@ body {
         
         height: auto;
     }
-    .items1, .items2 {
+    .items0, .items1 {
         grid-template-columns: repeat(26, 0.5fr);
         width: 500px;
         margin-top: 5px;
