@@ -23,6 +23,8 @@ function create_layout() {
         
                 label.appendChild(box)
                 label.appendChild(span)
+
+                // append 26 boxes each item container
                 if (i <= 25) {
                     items.appendChild(label)
                     
@@ -31,7 +33,8 @@ function create_layout() {
         }
         
     }
-            
+
+    // place separator on each ten years
     const hr = document.createElement('hr');
     document.body.appendChild(hr)
     
