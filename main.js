@@ -1,5 +1,8 @@
 
 function create_layout() {
+    const weeks = parseInt(localStorage.getItem("birthday"));
+    
+    console.log(weeks)
     // create main element to contain the layout
     const main = document.createElement('main');
     main.classList.add('main');
@@ -11,7 +14,7 @@ function create_layout() {
         document.body.appendChild(main);
         main.appendChild(items);
 
-        // create boxes equvalent to ten years
+        // create boxes equivalent to ten years
         for (let i = 0; i < 10; i++) {
             for (let i = 0; i < 26; i++) {
                 const div = document.createElement('div');
@@ -57,7 +60,7 @@ function birthday() {
     const diff_in_weeks = diff_in_days / 7;
     
     console.log(diff_in_weeks)
-    localStorage.setItem("brithday", diff_in_weeks);
+    localStorage.setItem("birthday", diff_in_weeks);
     if (!diff_in_weeks || diff_in_weeks <= 0) {
         alert("set your birthday!");
         window.location = "/birthday.html";
