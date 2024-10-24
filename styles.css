@@ -1,10 +1,36 @@
 body {
     margin: 0;
-    /* background-color: #666; */
 }
+
 .center_text {
     display: flex;
     justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+
+.new_calendar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.new_calendar a {
+    border: 1px solid hsla(0, 0%, 50%, 0.466);
+    background-color: hsla(0, 0%, 50%, 0.342);
+    text-decoration: none;
+    font-family: "Inter";
+    border-radius: 4px;
+    margin-top: -15px;
+    font-size: 0.8rem;
+    padding: 3px 6px;
+    color: black;
+}
+
+.new_calendar a:hover {
+    cursor: pointer;
+    background-color: hsl(0, 0%, 50%);
 }
 
 .main {
@@ -36,6 +62,16 @@ body {
     height: auto;
 }
 
+.passed_weeks {
+    background-color: green;
+}
+
+caption {
+    display: block;
+    font-family: "Inter";
+    font-size: 0.85rem;
+    font-weight: 400;
+}
 
 hr {
     width: 99%;
@@ -85,9 +121,6 @@ hr {
 }
 
 @media screen and (max-width: 520px) {
-
-
-
     .box_element {
         width: 3vw;
         height: 3vw;
