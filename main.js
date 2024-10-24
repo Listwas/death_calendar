@@ -1,9 +1,4 @@
 
-function years() {
-    const years = document.getElementById("years").value;
-    localStorage.setItem("years", years)
-    console.log(years)
-}
 
 function birthday() {
     const birthday = document.getElementById("birthday").value;
@@ -47,7 +42,7 @@ function create_layout() {
 function generate_by_years() {
     // get birthday and years from local storage
     const years = localStorage.getItem("years");
-    if (years == null) {
+    if (!years || years === undefined) {
         window.location = "/birthday.html"
     } 
 
@@ -57,4 +52,28 @@ function generate_by_years() {
     for (let i = 0; i < real_years; i++) {
         create_layout()
     } 
+}
+
+function modify_years(years) {
+    const element = document.getElementById("years");
+    let int_el = parseInt(element.textContent);
+    int_el += years;
+
+    const sub_ten = document.getElementById("sub_ten");
+    const add_ten = document.getElementById("add_ten");
+
+    localStorage.setItem("years", int_el);
+
+    if (int_el >= 100) {
+        add_ten.disabled = true;
+        sub_ten.disabled = false;
+    } else if (int_el <= 10) {
+        add_ten.disabled = false;
+        sub_ten.disabled = true;
+    } else {
+        add_ten.disabled = false;
+        sub_ten.disabled = false;
+    }
+
+    element.innerText = int_el; 
 }
