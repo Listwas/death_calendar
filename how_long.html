@@ -11,11 +11,11 @@
 <body>
     <main>
         <div>
-            <label>
-                How long you want to live?
-                <input id="years" type="number" min="10" max="100" placeholder="years" />
-                <a href="site.html" onclick="years()">create calendar</a>
-            </label>
+            <p>How long you want to live?</p>
+            <p id="years">10</p>
+            <button id="sub_ten" onclick="modify_years(-10)" disabled>-10</button>
+            <button id="add_ten" onclick="modify_years(+10)">+10</button>
+            <a href="site.html" onclick="modify_years(0)">create calendar</a>
         </div>
     </main>
 
