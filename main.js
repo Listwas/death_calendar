@@ -47,7 +47,12 @@ function create_layout() {
 function generate_by_years() {
     // get birthday and years from local storage
     const years = localStorage.getItem("years");
+    if (years == null) {
+        window.location = "/birthday.html"
+    } 
+
     const real_years = years.split(0, 1)
+    
 
     for (let i = 0; i < real_years; i++) {
         create_layout()
