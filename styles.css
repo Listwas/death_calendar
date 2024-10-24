@@ -11,9 +11,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-flow: row nowrap;
-
-    width: auto;
+    flex-flow: row wrap;
+    
+    width: 100%;
     height: auto;
 
 }
@@ -23,7 +23,7 @@ body {
     grid-template-columns: repeat(26, 1fr);
     grid-template-rows: repeat(10, 1fr) ;
     margin: 10px;
-    gap: 5px;
+    gap: 2px;
     width: auto;
     height: auto;
 }
@@ -32,8 +32,8 @@ body {
     display: block;
     position: relative;
     background-color: blue;
-    width: 1vw;
-    height: 1vh;
+    width: auto;
+    height: auto;
 }
 
 
@@ -43,47 +43,53 @@ hr {
     margin: 0;
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 1000px) {
     .box_element {
-        width: 1vw;
-        height: 1vw;
+        width: 1.2vw;
+        height: 1.2vw;
     }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1000px) {
     .box_element {
-        width: 1.2vw;
-        height: 1.2vh;
+        width: 1.4vw;
+        height: 1.4vw;
     }   
 
     .items0, .items1 {
-        width: 800px;
-        margin-left: 4px;
-        margin-right: 4px;
+        width: auto;
         gap: 2px;
     }
 
 }
 
-@media screen and (max-width: 605px) {
+
+@media screen and (max-width: 800px) {
     .main {
-        display: flex;
-        justify-content: center;
         flex-flow: column wrap;
-        
-        height: auto;
     }
+
     .items0, .items1 {
         grid-template-columns: repeat(26, 0.5fr);
-        width: 500px;
         margin-top: 5px;
         margin-bottom: 5px;
-        margin-left: 2px;
+        
         gap:1px;
     }
 
     .box_element {
-        width: 15px;
-        height: 15px;
-    }   
+        width: 3vw;
+        height: 3vw;
+    }
+
 }
+
+@media screen and (max-width: 520px) {
+
+
+
+    .box_element {
+        width: 3vw;
+        height: 3vw;
+    }   
+} 
