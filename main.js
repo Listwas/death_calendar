@@ -1,8 +1,8 @@
+let item_count = 0;
 
 function create_layout() {
     const weeks = parseInt(localStorage.getItem("birthday"));
-    
-    console.log(weeks)
+
     // create main element to contain the layout
     const main = document.createElement('main');
     main.classList.add('main');
@@ -19,6 +19,11 @@ function create_layout() {
             for (let i = 0; i < 26; i++) {
                 const div = document.createElement('div');
                 div.classList.add("box_element");
+                item_count++;
+                if (item_count < weeks+1) {
+                    div.classList.add("passed_weeks")
+                } 
+
                 // append 26 boxes each item container
                 if (i <= 25) {
                     items.appendChild(div);
@@ -32,7 +37,6 @@ function create_layout() {
     // place separator on each ten years
     const hr = document.createElement('hr');
     document.body.appendChild(hr);
-    
 }
 
 function generate_by_years() {
@@ -52,14 +56,13 @@ function generate_by_years() {
 
 function birthday() {
     const date = new Date();
-    
+        
     const birthday = new Date(document.getElementById("birthday").value);
-
+    
     const diff_in_months = date - birthday;
     const diff_in_days = diff_in_months / (1000 * 60 * 60 * 24);
     const diff_in_weeks = diff_in_days / 7;
     
-    console.log(diff_in_weeks)
     localStorage.setItem("birthday", diff_in_weeks);
     if (!diff_in_weeks || diff_in_weeks <= 0) {
         alert("set your birthday!");
@@ -92,3 +95,28 @@ function modify_years(years) {
 }
 
 
+function clear_storage() {
+    localStorage.clear()
+}
+
+
+function display_description() {
+    const weeks = parseFloat(localStorage.getItem("birthday"));
+
+    const days = weeks * 7;
+    const years = days / 365;
+    const months = years * 12;
+    
+    const description_parent = document.querySelector('h1');
+
+    const description_child = document.createElement('caption');
+    description_child.innerText = `you are actually alive for ${weeks.toFixed(2)} weeks!`;
+
+    const description_child1 = document.createElement('caption');
+    description_child1.innerText = `it's ${days.toFixed(2)} days or ${months.toFixed(2)} months or ${years.toFixed(2)} years!`;
+
+    description_parent.appendChild(description_child);
+    description_parent.appendChild(description_child1)
+}
+
+display_description();
