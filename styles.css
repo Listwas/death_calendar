@@ -1,6 +1,10 @@
 body {
     margin: 0;
-    background-color: #666;
+    /* background-color: #666; */
+}
+.center_text {
+    display: flex;
+    justify-content: center;
 }
 
 .main {
@@ -24,34 +28,14 @@ body {
     height: auto;
 }
 
-.label {
+.box_element {
     display: block;
     position: relative;
-}
-
-.label input {
-    position: absolute;
-    opacity: 0;
-    margin: 0;
-    cursor: pointer;
-}
-
-.label input:checked ~ .span {
-    background-color: #2196F3;
-}
-
-.label:hover input ~ .span {
-    background-color: #ccc;
-}
-
-.span {
-    position: absolute;
     background-color: blue;
+    width: 1vw;
+    height: 1vh;
 }
 
-.middle_box {
-    background-color: #666;
-}
 
 hr {
     width: 99%;
@@ -60,14 +44,14 @@ hr {
 }
 
 @media screen and (min-width: 900px) {
-    .label, .label input, .span {
+    .box_element {
         width: 1vw;
         height: 1vw;
     }
 }
 
 @media screen and (max-width: 900px) {
-    .label, .label input, .span {
+    .box_element {
         width: 1.2vw;
         height: 1.2vh;
     }   
@@ -98,7 +82,7 @@ hr {
         gap:1px;
     }
 
-    .label, .label input, .span {
+    .box_element {
         width: 15px;
         height: 15px;
     }   

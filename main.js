@@ -26,21 +26,13 @@ function create_layout() {
         // create boxes equvalent to ten years
         for (let i = 0; i < 10; i++) {
             for (let i = 0; i < 26; i++) {
-                const label = document.createElement("label");
-                const box = document.createElement("input");
-                const span = document.createElement("span");
-                label.classList.add("label");
-                span.classList.add("span")
-                box.type = "checkbox";
-        
-                label.appendChild(box)
-                label.appendChild(span)
-
+                const div = document.createElement('div');
+                div.classList.add("box_element")
                 // append 26 boxes each item container
                 if (i <= 25) {
-                    items.appendChild(label)
+                    items.appendChild(div)
                     
-                } else {items.appendChild(label)}
+                } else {items.appendChild(div)}
             }
         }
         
