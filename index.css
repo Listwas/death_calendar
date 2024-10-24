@@ -35,6 +35,7 @@ button, a{
 
 a {
     width: 100px;
+    text-align: center;
 }
 
 button:disabled {
