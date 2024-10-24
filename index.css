@@ -1,6 +1,8 @@
 body {
     background-color: hsl(210, 4%, 9%);
     color: white;
+    user-select: none;
+
 }
 main {
     display: flex;
@@ -15,5 +17,31 @@ main div {
     justify-content: center;
     align-items: center;
     flex-direction: row nowrap;
-    gap: 12px;
+    gap: 8px;
+}
+
+
+
+button, a{
+    width: 40px;
+    text-decoration: none;
+    color: white;
+    padding: 3px;
+    border: 2px solid hsl(0, 0%, 50%);
+    background-color: hsla(0, 0%, 50%, 0.432);
+    border-radius: 8px;
+
+}
+
+a {
+    width: 100px;
+}
+
+button:disabled {
+    color: hsla(0, 0%, 50%, 0);
+}
+
+button:hover, a:hover {
+    cursor: pointer;
+    background-color: hsl(0, 0%, 50%);
 }
