@@ -5,16 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./index.css">
     <title>how long you'll live</title>
+    <script defer src="main.js"></script>
+
 </head>
 <body>
     <main>
         <div>
             <label>
                 How long you want to live?
-                <input type="text" placeholder="insert number of years"/>
-                <a href="site.html">create calendar</a>
+                <input id="years" type="number" min="10" max="100" placeholder="years" />
+                <a href="site.html" onclick="years()">create calendar</a>
             </label>
         </div>
     </main>
+
 </body>
 </html>

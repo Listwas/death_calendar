@@ -55,7 +55,8 @@ body {
 
 hr {
     width: 99%;
-    border: 1px solid white
+    border: 1px solid white;
+    margin: 0;
 }
 
 @media screen and (min-width: 900px) {

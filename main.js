@@ -1,4 +1,16 @@
 
+function years() {
+    const years = document.getElementById("years").value;
+    localStorage.setItem("years", years)
+    console.log(years)
+}
+
+function birthday() {
+    const birthday = document.getElementById("birthday").value;
+    localStorage.setItem("brithday", birthday)
+    console.log(birthday)
+}
+
 function create_layout() {
     // create main element to contain the layout
     const main = document.createElement('main');
@@ -40,6 +52,12 @@ function create_layout() {
     
 }
 
-create_layout()
+function generate_by_years() {
+    // get birthday and years from local storage
+    const years = localStorage.getItem("years");
+    const real_years = years.split(0, 1)
 
-
+    for (let i = 0; i < real_years; i++) {
+        create_layout()
+    } 
+}
